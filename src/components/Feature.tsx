@@ -35,7 +35,7 @@ const Feature = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white p-8 rounded-lg shadow-md text-center"
+              // className="bg-white p-8 rounded-lg shadow-md text-center"
             >
   {/* CONTROL THE COLOR OF THE STATS IN THE LINE BELOW, SET IT TO GRAY FOR NOW */}
               <div className="text-4xl font-bold text-primary mb-2 text-gray-700">
