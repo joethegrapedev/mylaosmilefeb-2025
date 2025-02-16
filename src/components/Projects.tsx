@@ -31,9 +31,9 @@ const Projects = () => {
 
 
     
-    <section className= "bg-center"
+    <section 
       id="projects"
-      className="w-full py-20 border-b-[1px] border-b-gray-700"
+      className=" bg-center w-full py-20 border-b-[1px] border-b-gray-700"
     >
       <FadeIn>
         <div className="flex justify-center items-center text-center">
