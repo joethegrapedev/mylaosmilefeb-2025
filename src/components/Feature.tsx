@@ -10,8 +10,8 @@ import {motion} from "framer-motion";
 
 
 const statistics = [
-  { label: 'Surgeries Delivered', value: 102 },
-  { label: 'Active Volunteers', value: 34 },
+  { label: 'Surgeries Delivered', value: 109 },
+  { label: 'Active Volunteers', value: 40 },
   { label: 'Medical Missions', value: 5 },
 ]
 

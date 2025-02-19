@@ -3,9 +3,13 @@ import { useState } from 'react';
 import { FadeIn } from './FadeIn';
 import Pic1 from "../assets/images/Cordelia.jpeg";
 const teamppl = {
-    Doctors: ["Kuek Bak Kim Leslie", "Por Yong Chen", "Wu Tze Liang Woffles", "Michael Hsieh Ku-Hung", "Robert Yap Tze Jin", "Lim Jue Shuang Gale", "Savitha Ramachandran", "Cai Zhengyang Elijah", "Ang Shu Yan Divya", "Lai Yu Ming", "Loh Mei Ling", "Paul Mann (Romania)", "Lim Hsien Jer", "Tan Swee Kim Josephine", "Tan Geok Mui", "Davies Lucy Jennifer", "Rachael Peirera", "Claire Ang Sze Teng", "Neo Hong Jye", "Ng Bang Teen", "Philip Tseng Seng Sou", "Stephanie Glarbo Jia Xing", "Angela Tan Yun June", "Yap Si Hui", "Chia Xian Qing Pamela", "Ma Wai Wai Zaw", "Catherine Lee Tong How", "Jonathan See"],
-    Nurses: ["Cordelia Xavier", "Chua Sin Yee", "Ong ShiHui", "Manoranjitham Harikrishnan", "Nur Diyana Binte Jamial", "Yvonne Yap Yan Yan", "Tan Hwee Min"],
-    "Speech Therapist": ["Jasmin Teo Lee Ping"],
+    Doctors: ["Kuek Bak Kim Leslie", "Por Yong Chen", "Wu Tze Liang Woffles", "Michael Hsieh Ku-Hung", "Robert Yap Tze Jin", "Lim Jue Shuang Gale", "Savitha Ramachandran", "Cai Zhengyang Elijah", "Ang Shu Yan Divya", "Lai Yu Ming", "Loh Mei Ling", "Lim Hsien Jer", "Tan Swee Kim Josephine", "Tan Geok Mui", "Davies Lucy Jennifer", "Rachael Peirera", "Claire Ang Sze Teng", "Neo Hong Jye", "Ng Bang Teen", "Philip Tseng Seng Sou", "Stephanie Glarbo Jia Xing", "Angela Tan Yun June", "Yap Si Hui", "Ma Wai Wai Zaw", "Catherine Lee Tong How", "Jonathan See"],
+    Nurses: [
+        "Ong ShiHui", "Lew Lian Choo", "Cassandra Leong", "Ho Liping  Michelle",
+        "Chua Sin Yee", "Cordelia Xavier", "Ng Sau Foong", "Yvonne Yap Yan Yan",
+        "Manoranjitham Harikrishnan", "Sheena Wong Xiu Wen", "Nur Diyana Binte Jamial",
+        "Tan Hwee Min"
+    ], "Speech Therapist": ["Jasmin Teo Lee Ping"],
     "Photographer / Web designer": ["John Tow"],
 };
 const teamMembers = {
