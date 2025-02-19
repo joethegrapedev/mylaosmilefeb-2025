@@ -1,4 +1,5 @@
 import { jsx as _jsx } from "react/jsx-runtime";
+// Empty component
 const Education = () => {
     return (
     // <motion.div

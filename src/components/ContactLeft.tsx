@@ -1,6 +1,9 @@
 import { FaFacebookF, FaYoutube, FaInstagram} from "react-icons/fa";
 import { contactImg } from "../assets";
 
+//Contact section
+
+
 const ContactLeft = () => {
   return (
     <div className="w-full lgl:w-[35%] h-full bg-gradient-to-r from-[#0B1120] to-[#0B1120] p-4 lgl:p-8 rounded-lg shadow-shadowOne flex flex-col gap-8 justify-center">

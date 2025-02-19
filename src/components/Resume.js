@@ -3,16 +3,16 @@ import { useState } from 'react';
 import { FadeIn } from './FadeIn';
 import Pic1 from "../assets/images/Cordelia.jpeg";
 const teamppl = {
-    Doctors: ["Dr. Leslie Quek", "Dr. Woffles Wu", "Dr. Gale Lim", "Dr Elijah Cai", "Dr. Robert Yap", "Dr. Por Yong Chen", "Dr. Low Mei Ling", "Dr. Divya Ang"],
+    "Plastic Surgeons": ["Dr. Leslie Kuek", "Dr. Woffles Wu", "Dr. Gale Lim", "Dr Elijah Cai", "Dr. Robert Yap", "Dr. Por Yong Chen", "Dr. Low Mei Ling", "Dr. Divya Ang"],
     Anesthetists: ["Dr. Lucy Davies", "Dr. Lim Hsien Jer", "Dr. Tan Geok Mui", "Dr. Zaw Ma Wai Wai", "Dr. Jonathan See", "Dr. Josephine Tan", "Dr. Claire Ang", "Dr. Ng Bang Teen", "Dr. Neo Hong Jye", "Dr. Rachel Pereira"],
-    Nurses: ["Cordelia Chang", "Chua Sin Yee", "Ivy Ong", "Mano", "Diyana", "Yvonne Yap", "Tan Hwee Min"],
-    Publicity: ["John Tow"],
+    Nurses: ["Cordelia Xavier", "Chua Sin Yee", "Ivy Ong", "Mano", "Diyana", "Yvonne Yap", "Tan Hwee Min"],
+    "Photographer / Web designer": ["John Tow"],
 };
 const teamMembers = {
     leaders: [
         {
             name: "Dr. Leslie Kuek",
-            role: "Founder / Plastic Surgeon",
+            role: "Team Leader",
             image: "https://www.farrerpark.com/dam/jcr:5f16b4d2-012c-4bf3-9062-974f94ac7b5e/LeslieKuek.jpg" // Direct URL to the image
         },
         {
@@ -22,13 +22,13 @@ const teamMembers = {
         },
         {
             name: "Prof. Lee Seng Teik",
-            role: "Advisor",
+            role: "Founder",
             image: "https://mindfulnessacademy.org/images/events/conferences/2015-MTeachers/speakers/LeeSengTeik-pt.jpg"
         },
         {
             name: "Dr. Woffles Wu",
             role: "Lead Plastic Surgeon",
-            image: "https://www.woffleswu.com/wp-content/uploads/2020/04/dr-woffles-wu.jpg"
+            image: "https://www.woffleswu.com/wp-content/uploads/2020/06/AN-EYELID-FOR-BEAUTY-cover.jpg"
         },
     ],
     // surgeons: [

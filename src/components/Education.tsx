@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import ResumeCard from "./ResumeCard";
 
+// Empty component
+
+
 const Education = () => {
   return (
     // <motion.div
