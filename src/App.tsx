@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Banner from "./components/Banner";
 import Contact from "./components/Contact";
-import Feature from "./components/Feature";
+import Feature from "./components/Statistics";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Missions";
