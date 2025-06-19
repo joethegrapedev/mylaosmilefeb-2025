@@ -14,7 +14,7 @@ import {
   getDownloadURL, 
   deleteObject 
 } from 'firebase/storage';
-import { db, storage } from './config';
+import { db, storage, auth } from './config';
 
 export interface Mission {
   id?: string;
@@ -23,6 +23,7 @@ export interface Mission {
   order?: number;
   reportUrl?: string;
   reportFileName?: string;
+  storageFileName?: string; // The actual filename in storage
 }
 
 const COLLECTION_NAME = 'missions';
@@ -72,18 +73,19 @@ export const deleteMission = async (id: string): Promise<void> => {
 };
 
 // Upload a file to Firebase Storage
-export const uploadMissionFile = async (file: File, missionId: string): Promise<{ url: string; fileName: string }> => {
+export const uploadMissionFile = async (file: File, missionId: string): Promise<{ url: string; fileName: string; storageFileName: string }> => {
   try {
     const fileExtension = file.name.split('.').pop();
-    const fileName = `mission-${missionId}-${Date.now()}.${fileExtension}`;
-    const storageRef = ref(storage, `mission-reports/${fileName}`);
+    const storageFileName = `mission-${missionId}-${Date.now()}.${fileExtension}`;
+    const storageRef = ref(storage, `mission-reports/${storageFileName}`);
     
     const snapshot = await uploadBytes(storageRef, file);
     const downloadURL = await getDownloadURL(snapshot.ref);
     
     return {
       url: downloadURL,
-      fileName: file.name
+      fileName: file.name, // Original filename for display
+      storageFileName: storageFileName // Storage filename for deletion
     };
   } catch (error) {
     console.error('Error uploading file:', error);
@@ -94,8 +96,14 @@ export const uploadMissionFile = async (file: File, missionId: string): Promise<
 // Delete a file from Firebase Storage
 export const deleteMissionFile = async (fileName: string): Promise<void> => {
   try {
+    console.log('Attempting to delete file:', fileName);
+    console.log('Auth user:', auth.currentUser);
+    
     const storageRef = ref(storage, `mission-reports/${fileName}`);
+    console.log('Storage reference path:', storageRef.fullPath);
+    
     await deleteObject(storageRef);
+    console.log('File deleted successfully');
   } catch (error) {
     console.error('Error deleting file:', error);
     throw error;
@@ -105,7 +113,7 @@ export const deleteMissionFile = async (fileName: string): Promise<void> => {
 // Update mission with file information
 export const updateMissionWithFile = async (
   id: string, 
-  fileData: { reportUrl: string; reportFileName: string }
+  fileData: { reportUrl: string; reportFileName: string; storageFileName?: string }
 ): Promise<void> => {
   try {
     const missionRef = doc(db, COLLECTION_NAME, id);

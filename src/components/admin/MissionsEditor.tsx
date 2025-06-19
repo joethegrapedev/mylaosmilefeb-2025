@@ -92,16 +92,17 @@ const MissionsEditor: React.FC = () => {
       setUploadingFiles(prev => new Set(prev).add(missionId));
       setError(null);
 
-      const { url, fileName } = await uploadMissionFile(file, missionId);
+      const { url, fileName, storageFileName } = await uploadMissionFile(file, missionId);
       await updateMissionWithFile(missionId, { 
         reportUrl: url, 
-        reportFileName: fileName 
+        reportFileName: fileName,
+        storageFileName: storageFileName
       });
 
       // Update local state
       setMissions(missions.map(mission => 
         mission.id === missionId 
-          ? { ...mission, reportUrl: url, reportFileName: fileName }
+          ? { ...mission, reportUrl: url, reportFileName: fileName, storageFileName: storageFileName }
           : mission
       ));
 
@@ -127,25 +128,54 @@ const MissionsEditor: React.FC = () => {
     }
 
     try {
-      // Extract the actual filename from the Firebase Storage URL if needed
+      console.log('handleFileDelete called with:', { missionId, storageFileName });
+      
+      // Find the mission to get all file info
+      const mission = missions.find(m => m.id === missionId);
+      console.log('Mission data:', mission);
+      
+      // If we don't have storageFileName, try to extract it from the URL
       let fileName = storageFileName;
-      if (storageFileName.includes('mission-reports/')) {
-        fileName = storageFileName.split('mission-reports/')[1];
-      } else if (storageFileName.includes('%2F')) {
-        fileName = storageFileName.split('%2F')[1];
+      if (!fileName && mission?.reportUrl) {
+        // Try to extract filename from the download URL
+        const url = mission.reportUrl;
+        const match = url.match(/mission-reports%2F([^?&]+)/);
+        if (match) {
+          fileName = decodeURIComponent(match[1]);
+          console.log('Extracted filename from URL:', fileName);
+        }
       }
+      
+      if (!fileName) {
+        throw new Error('Cannot determine file to delete');
+      }
+      
+      // Clean up the filename - remove any query parameters
+      if (fileName.includes('?')) {
+        fileName = fileName.split('?')[0];
+      }
+      
+      // Extract the actual filename from path if needed
+      if (fileName.includes('mission-reports/')) {
+        fileName = fileName.split('mission-reports/')[1];
+      } else if (fileName.includes('%2F')) {
+        fileName = fileName.split('%2F')[1];
+      }
+      
+      console.log('Final filename for deletion:', fileName);
       
       await deleteMissionFile(fileName);
       
-      await updateMissionWithFile(missionId, { 
+      await updateMissionWithFile(missionId,  { 
         reportUrl: '', 
-        reportFileName: '' 
+        reportFileName: '',
+        storageFileName: ''
       });
 
       // Update local state
       setMissions(missions.map(mission => 
         mission.id === missionId 
-          ? { ...mission, reportUrl: undefined, reportFileName: undefined }
+          ? { ...mission, reportUrl: undefined, reportFileName: undefined, storageFileName: undefined }
           : mission
       ));
 
@@ -403,7 +433,7 @@ const MissionCard: React.FC<MissionCardProps> = ({
                     View
                   </a>
                   <button
-                    onClick={() => onFileDelete(mission.id || '', mission.reportFileName || '')}
+                    onClick={() => onFileDelete(mission.id || '', mission.storageFileName || mission.reportUrl || '')}
                     className="text-sm text-red-600 hover:underline"
                   >
                     Delete
