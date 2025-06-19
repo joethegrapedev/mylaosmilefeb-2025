@@ -19,33 +19,38 @@ const db = getFirestore(app);
 const defaultMissions = [
   {
     title: "February 2025",
-    location: "Vientiane, Laos",
     description: "Completed 33 life-changing cleft lip and palate surgeries for children and adults, transforming lives and bringing smiles to families across the capital.",
-    order: 1
+    order: 1,
+    reportUrl: "",
+    reportFileName: ""
   },
   {
     title: "June 2024", 
-    location: "Luang Prabang, Laos",
     description: "Successfully performed 8 complex reconstructive surgeries in the UNESCO World Heritage city, providing hope to rural communities.",
-    order: 2
+    order: 2,
+    reportUrl: "",
+    reportFileName: ""
   },
   {
     title: "March 2024",
-    location: "Savannakhet, Laos", 
     description: "Delivered 23 surgeries in southern Laos, including training local medical staff in cleft care techniques and post-operative care.",
-    order: 3
+    order: 3,
+    reportUrl: "",
+    reportFileName: ""
   },
   {
     title: "October 2023",
-    location: "Pakse, Laos", 
     description: "Conducted 28 surgeries during our largest mission to date, establishing partnerships with local hospitals for ongoing patient care.",
-    order: 4
+    order: 4,
+    reportUrl: "",
+    reportFileName: ""
   },
   {
     title: "February 2023",
-    location: "Vientiane, Laos", 
     description: "Performed 17 surgeries while launching our community outreach program to identify and support more children in need of care.",
-    order: 5
+    order: 5,
+    reportUrl: "",
+    reportFileName: ""
   }
 ];
 
@@ -57,10 +62,10 @@ async function initializeMissions() {
     
     for (let i = 0; i < defaultMissions.length; i++) {
       const mission = defaultMissions[i];
-      console.log(`Adding mission ${i + 1}/${defaultMissions.length}: ${mission.location} (${mission.title})`);
+      console.log(`Adding mission ${i + 1}/${defaultMissions.length}: ${mission.title}`);
       
       const docRef = await addDoc(collection(db, 'missions'), mission);
-      console.log(`✓ Added mission: ${mission.location} - Document ID: ${docRef.id}`);
+      console.log(`✓ Added mission: ${mission.title} - Document ID: ${docRef.id}`);
     }
     
     console.log('✅ All missions initialized successfully!');

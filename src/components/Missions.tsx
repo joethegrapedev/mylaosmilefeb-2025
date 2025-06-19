@@ -18,11 +18,11 @@ const Missions = () => {
         setError('Failed to load missions');
         // Fallback to static data if Firebase fails
         setMissions([
-          { id: '1', title: "February 2025", location: "Vientiane", description: "33 Surgeries delivered", order: 1 },
-          { id: '2', title: "June 2024", location: "Luang Prabang", description: "8 Surgeries delivered", order: 2 },
-          { id: '3', title: "March 2024", location: "Savannakhet", description: "23 Surgeries delivered", order: 3 },
-          { id: '4', title: "October 2023", location: "Pakse", description: "28 Surgeries delivered", order: 4 },
-          { id: '5', title: "February 2023", location: "Vientiane", description: "17 Surgeries delivered", order: 5 },
+          { id: '1', title: "February 2025", description: "33 Surgeries delivered", order: 1, reportUrl: undefined, reportFileName: undefined },
+          { id: '2', title: "June 2024", description: "8 Surgeries delivered", order: 2, reportUrl: undefined, reportFileName: undefined },
+          { id: '3', title: "March 2024", description: "23 Surgeries delivered", order: 3, reportUrl: undefined, reportFileName: undefined },
+          { id: '4', title: "October 2023", description: "28 Surgeries delivered", order: 4, reportUrl: undefined, reportFileName: undefined },
+          { id: '5', title: "February 2023", description: "17 Surgeries delivered", order: 5, reportUrl: undefined, reportFileName: undefined },
         ]);
       } finally {
         setLoading(false);
@@ -81,11 +81,25 @@ const Missions = () => {
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {missions.map((mission) => (
                 <div key={mission.id} className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                  <div className="flex justify-between items-start mb-3">
+                  <div className="mb-3">
                     <h4 className="text-lg font-semibold text-gray-800">{mission.title}</h4>
-                    <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded">{mission.location}</span>
                   </div>
-                  <p className="text-gray-700 leading-relaxed">{mission.description}</p>
+                  <p className="text-gray-700 leading-relaxed mb-4">{mission.description}</p>
+                  {mission.reportUrl && (
+                    <div className="mt-auto">
+                      <a
+                        href={mission.reportUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                      >
+                        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        View Mission Report
+                      </a>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

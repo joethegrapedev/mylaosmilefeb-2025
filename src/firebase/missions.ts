@@ -8,14 +8,21 @@ import {
   query,
   orderBy
 } from 'firebase/firestore';
-import { db } from './config';
+import { 
+  ref, 
+  uploadBytes, 
+  getDownloadURL, 
+  deleteObject 
+} from 'firebase/storage';
+import { db, storage } from './config';
 
 export interface Mission {
   id?: string;
   title: string;
-  location: string;
   description: string;
   order?: number;
+  reportUrl?: string;
+  reportFileName?: string;
 }
 
 const COLLECTION_NAME = 'missions';
@@ -60,6 +67,51 @@ export const deleteMission = async (id: string): Promise<void> => {
     await deleteDoc(doc(db, COLLECTION_NAME, id));
   } catch (error) {
     console.error('Error deleting mission:', error);
+    throw error;
+  }
+};
+
+// Upload a file to Firebase Storage
+export const uploadMissionFile = async (file: File, missionId: string): Promise<{ url: string; fileName: string }> => {
+  try {
+    const fileExtension = file.name.split('.').pop();
+    const fileName = `mission-${missionId}-${Date.now()}.${fileExtension}`;
+    const storageRef = ref(storage, `mission-reports/${fileName}`);
+    
+    const snapshot = await uploadBytes(storageRef, file);
+    const downloadURL = await getDownloadURL(snapshot.ref);
+    
+    return {
+      url: downloadURL,
+      fileName: file.name
+    };
+  } catch (error) {
+    console.error('Error uploading file:', error);
+    throw error;
+  }
+};
+
+// Delete a file from Firebase Storage
+export const deleteMissionFile = async (fileName: string): Promise<void> => {
+  try {
+    const storageRef = ref(storage, `mission-reports/${fileName}`);
+    await deleteObject(storageRef);
+  } catch (error) {
+    console.error('Error deleting file:', error);
+    throw error;
+  }
+};
+
+// Update mission with file information
+export const updateMissionWithFile = async (
+  id: string, 
+  fileData: { reportUrl: string; reportFileName: string }
+): Promise<void> => {
+  try {
+    const missionRef = doc(db, COLLECTION_NAME, id);
+    await updateDoc(missionRef, fileData);
+  } catch (error) {
+    console.error('Error updating mission with file:', error);
     throw error;
   }
 };
