@@ -10,6 +10,7 @@ import Testimonial from "./components/Testimonial";
 import AdminSignIn from "./components/admin/AdminSignIn";
 import AdminConsole from "./components/admin/AdminConsole";
 import ProtectedRoute from "./components/admin/ProtectedRoute";
+import './utils/testMissions'; // Import test functions for browser console
 
 // Main website component
 const MainSite = () => {
