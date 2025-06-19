@@ -18,11 +18,11 @@ const Missions = () => {
         setError('Failed to load missions');
         // Fallback to static data if Firebase fails
         setMissions([
-          { id: '1', date: "February 2025", location: "Vientiane", description: "33 Surgeries delivered", order: 1 },
-          { id: '2', date: "June 2024", location: "Luang Prabang", description: "8 Surgeries delivered", order: 2 },
-          { id: '3', date: "March 2024", location: "Savannakhet", description: "23 Surgeries delivered", order: 3 },
-          { id: '4', date: "October 2023", location: "Pakse", description: "28 Surgeries delivered", order: 4 },
-          { id: '5', date: "February 2023", location: "Vientiane", description: "17 Surgeries delivered", order: 5 },
+          { id: '1', title: "February 2025", location: "Vientiane", description: "33 Surgeries delivered", order: 1 },
+          { id: '2', title: "June 2024", location: "Luang Prabang", description: "8 Surgeries delivered", order: 2 },
+          { id: '3', title: "March 2024", location: "Savannakhet", description: "23 Surgeries delivered", order: 3 },
+          { id: '4', title: "October 2023", location: "Pakse", description: "28 Surgeries delivered", order: 4 },
+          { id: '5', title: "February 2023", location: "Vientiane", description: "17 Surgeries delivered", order: 5 },
         ]);
       } finally {
         setLoading(false);
@@ -82,8 +82,8 @@ const Missions = () => {
               {missions.map((mission) => (
                 <div key={mission.id} className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300">
                   <div className="flex justify-between items-start mb-3">
-                    <h4 className="text-lg font-semibold text-gray-800">{mission.location}</h4>
-                    <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded">{mission.date}</span>
+                    <h4 className="text-lg font-semibold text-gray-800">{mission.title}</h4>
+                    <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded">{mission.location}</span>
                   </div>
                   <p className="text-gray-700 leading-relaxed">{mission.description}</p>
                 </div>

@@ -14,7 +14,7 @@ export const testMissionsService = async () => {
     // Test adding a mission
     console.log('Adding test mission...');
     const testMission = {
-      date: "Test Date",
+      title: "Test Mission",
       location: "Test Location", 
       description: "Test mission description",
       order: 999

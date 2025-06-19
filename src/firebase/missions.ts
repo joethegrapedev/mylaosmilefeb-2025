@@ -12,7 +12,7 @@ import { db } from './config';
 
 export interface Mission {
   id?: string;
-  date: string;
+  title: string;
   location: string;
   description: string;
   order?: number;

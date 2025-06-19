@@ -9,7 +9,7 @@ const MissionsEditor: React.FC = () => {
   const [isAddingNew, setIsAddingNew] = useState(false);
 
   const [newMission, setNewMission] = useState<Omit<Mission, 'id'>>({
-    date: '',
+    title: '',
     location: '',
     description: '',
     order: 0
@@ -52,7 +52,7 @@ const MissionsEditor: React.FC = () => {
       const id = await addMission(newMission);
       const addedMission = { ...newMission, id };
       setMissions([...missions, addedMission]);
-      setNewMission({ date: '', location: '', description: '', order: 0 });
+      setNewMission({ title: '', location: '', description: '', order: 0 });
       setIsAddingNew(false);
       setError(null);
     } catch (err) {
@@ -109,29 +109,18 @@ const MissionsEditor: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Date
+                Title
               </label>
               <input
                 type="text"
-                value={newMission.date}
-                onChange={(e) => setNewMission({ ...newMission, date: e.target.value })}
+                value={newMission.title}
+                onChange={(e) => setNewMission({ ...newMission, title: e.target.value })}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="e.g., Feb 2025"
+                placeholder="e.g., February 2025 Mission"
               />
             </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Location
-              </label>
-              <input
-                type="text"
-                value={newMission.location}
-                onChange={(e) => setNewMission({ ...newMission, location: e.target.value })}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                placeholder="Mission location"
-              />
-            </div>
-            <div className="md:col-span-2">
+            
+            <div className="md:col-span-1">
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Description
               </label>
@@ -166,7 +155,7 @@ const MissionsEditor: React.FC = () => {
             <button
               onClick={() => {
                 setIsAddingNew(false);
-                setNewMission({ date: '', location: '', description: '', order: 0 });
+                setNewMission({ title: '', location: '', description: '', order: 0 });
               }}
               className="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition-colors"
             >
@@ -229,12 +218,12 @@ const MissionCard: React.FC<MissionCardProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Date
+              Title
             </label>
             <input
               type="text"
-              value={editedMission.date}
-              onChange={(e) => setEditedMission({ ...editedMission, date: e.target.value })}
+              value={editedMission.title}
+              onChange={(e) => setEditedMission({ ...editedMission, title: e.target.value })}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
@@ -295,8 +284,8 @@ const MissionCard: React.FC<MissionCardProps> = ({
       <div className="flex justify-between items-start">
         <div className="flex-1">
           <div className="flex items-center gap-4 mb-2">
-            <h3 className="text-lg font-semibold text-gray-900">{mission.location}</h3>
-            <span className="text-sm text-gray-500">{mission.date}</span>
+            <h3 className="text-lg font-semibold text-gray-900">{mission.title}</h3>
+            <span className="text-sm text-gray-500">{mission.location}</span>
             <span className="text-xs text-gray-400">Order: {mission.order}</span>
           </div>
           <p className="text-gray-700">{mission.description}</p>

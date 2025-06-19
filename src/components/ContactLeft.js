@@ -1,8 +1,0 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { FaFacebookF, FaYoutube, FaInstagram } from "react-icons/fa";
-import { contactImg } from "../assets";
-//Contact section
-const ContactLeft = () => {
-    return (_jsxs("div", { className: "w-full lgl:w-[35%] h-full bg-gradient-to-r from-[#0B1120] to-[#0B1120] p-4 lgl:p-8 rounded-lg shadow-shadowOne flex flex-col gap-8 justify-center", children: [_jsx("img", { className: "w-full h-64 object-cover rounded-lg mb-2", src: contactImg, alt: "contactImg" }), _jsxs("div", { className: "flex flex-col gap-4 text-gray-400", children: [_jsx("h3", { className: "text-3xl font-bold text-white", children: "Get in touch with us:" }), _jsxs("p", { className: "text-lg font-normal text-gray-400", children: ["Email: ", _jsx("span", { className: "text-gray-400", children: "laossmileoct2023@gmail.com" })] }), _jsx("p", { className: "text-base text-gray-400 tracking-wide" })] }), _jsxs("div", { className: "flex flex-col gap-4 text-gray-400", children: [_jsx("h2", { className: "text-base  uppercase font-titleFont mb-4", children: "Find us at" }), _jsxs("div", { className: "flex gap-4", children: [_jsx("a", { href: "https://youtu.be/_dih2JOb2C8", target: "_blank", children: _jsx("span", { className: "bannerIcon", children: _jsx(FaYoutube, {}) }) }), _jsx("a", { href: "https://www.instagram.com/mountelizabethhospitals/p/C0d2R7lInFg/?next=%2Frubykantor%2F&hl=ja&img_index=1", target: "_blank", children: _jsx("span", { className: "bannerIcon", children: _jsx(FaInstagram, {}) }) }), _jsx("a", { href: "https://www.facebook.com/watch/?v=1032449527847176", target: "_blank", children: _jsx("span", { className: "bannerIcon", children: _jsx(FaFacebookF, {}) }) })] })] })] }));
-};
-export default ContactLeft;
