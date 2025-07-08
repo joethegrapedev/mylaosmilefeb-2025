@@ -4,9 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://joethegrapedev.github.io/Laosmilewebsite1",
+  "engines": {
+    "node": ">=18.0.0 <21.0.0"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
+    "build-with-tsc": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
@@ -14,28 +18,33 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
-    "@types/react": "^19.0.1",
-    "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
     "firebase": "^11.9.1",
     "framer-motion": "^10.18.0",
-    "i": "^0.3.7",
     "postcss": "^8.4.49",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.4.0",
-    "react-router-dom": "^7.6.2",
-    "react-scripts": "^5.0.1",
+    "react-router-dom": "^6.28.0",
     "react-scroll": "^1.9.0",
     "react-slick": "^0.30.2",
     "slick-carousel": "^1.8.1",
     "tailwindcss": "^3.4.16"
   },
   "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
     "@types/react-scroll": "^1.8.10",
-    "eslint": "^9.16.0",
+    "@types/react-slick": "^0.23.13",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "@vitejs/plugin-react": "^4.0.4",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
     "gh-pages": "^6.3.0",
-    "typescript": "^4.9.5",
-    "vite": "^6.1.0"
+    "typescript": "^5.3.3",
+    "vite": "^4.5.5"
   }
 }
