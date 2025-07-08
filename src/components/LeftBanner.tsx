@@ -20,7 +20,7 @@ const LeftBanner = () => {
         <h2 className="text-4xl font-bold text-gray-400">
           a non-profit organization aimed at spreading Smiles.
         </h2>
-        <p className="text-base font-titleFont text-xl leading-6 tracking-wider text-black">
+        <p className="text-xl font-titleFont leading-6 tracking-wider text-black">
           MyLaoSmile is an alliance of healthcare professionals based in Singapore working together to 
           treat patients with burns and other facial deformities. Through deliving free surgical 
           aid to the underpriviledged in Laos, we aim to treat children with cleft lip burns, and congenital hand deformities.
