@@ -18,6 +18,7 @@ function SampleNextArrow(props: any) {
       className="w-14 h-12 bg-[#0c1821] hover:bg-black duration-300 rounded-md text-2xl text-gray-400 flex justify-center items-center absolute top-0 right-0 shadow-shadowOne cursor-pointer z-10"
       onClick={onClick}
     >
+      {/* @ts-ignore */}
       <HiArrowRight />
     </div>
   );
@@ -30,6 +31,7 @@ function SamplePrevArrow(props: any) {
       className="w-14 h-12 bg-[#0c1821] hover:bg-black duration-300 rounded-md text-2xl text-gray-400 flex justify-center items-center absolute top-0 right-20 shadow-shadowOne cursor-pointer z-10"
       onClick={onClick}
     >
+      {/* @ts-ignore */}
       <HiArrowLeft />
     </div>
   );

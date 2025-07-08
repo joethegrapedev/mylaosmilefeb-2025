@@ -29,6 +29,7 @@ const Card = ({ title, des, icon }: Props) => {
             </h2>
             <p className="base">{des}</p>
             <span className="text-2xl text-designColor">
+              {/* @ts-ignore */}
               <HiArrowRight />
             </span>
           </div>

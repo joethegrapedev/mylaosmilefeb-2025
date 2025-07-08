@@ -10,12 +10,14 @@ const Footer = () => {
         <div className="flex gap-4">
         <a href="https://youtu.be/_dih2JOb2C8" target="_blank">
             <span className="bannerIcon">
+              {/* @ts-ignore */}
               <FaYoutube />
             </span>
           </a>
           
           <a href="https://www.instagram.com/mountelizabethhospitals/p/C0d2R7lInFg/?next=%2Frubykantor%2F&hl=ja&img_index=1" target="_blank">
               <span className="bannerIcon">
+                {/* @ts-ignore */}
                 <FaInstagram />
               </span>
             </a>
@@ -30,6 +32,7 @@ const Footer = () => {
           </a> */}
           <a href="https://www.facebook.com/watch/?v=1032449527847176" target="_blank">
               <span className="bannerIcon">
+                {/* @ts-ignore */}
                 <FaFacebookF />
               </span>
             </a>

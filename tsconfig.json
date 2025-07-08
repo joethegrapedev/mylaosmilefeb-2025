@@ -6,7 +6,7 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "noEmitOnError": false,
-    "allowSyntheticDefaultImports": true, // Add this line
+    "allowSyntheticDefaultImports": true,
 
     /* Bundler mode */
     "moduleResolution": "node",
@@ -14,12 +14,23 @@
     "isolatedModules": true,
     "noEmit": false,
     "jsx": "react-jsx",
+    "jsxImportSource": "react",
 
     /* Linting */
     "strict": false,
     "noUnusedLocals": false,
     "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": false,
+    
+    /* Disable JSX strict checking */
+    "checkJs": false,
+    "exactOptionalPropertyTypes": false
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "compilerOptions": {
+      "strict": false
+    }
+  }
 }

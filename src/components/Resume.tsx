@@ -23,22 +23,22 @@ const teamMembers = {
   leaders: [
     { 
       name: "Dr. Leslie Kuek", 
-      role: "Team Leader", 
+      role: "Mission Leader", 
       image: "https://www.farrerpark.com/dam/jcr:5f16b4d2-012c-4bf3-9062-974f94ac7b5e/LeslieKuek.jpg" // Direct URL to the image
     },
     { 
       name: "Nurse Cordelia", 
-      role: "Lead Nurse", 
+      role: "Mission Coordinator", 
       image: Pic1
     },
     { 
       name: "Prof. Lee Seng Teik", 
-      role: "Founder", 
+      role: "Founder/Advisor", 
       image: "https://mindfulnessacademy.org/images/events/conferences/2015-MTeachers/speakers/LeeSengTeik-pt.jpg" 
     },
     { 
       name: "Dr. Woffles Wu", 
-      role: "Lead Plastic Surgeon", 
+      role: "Senior Plastic Surgeon/Team Leader", 
       image: "https://www.woffleswu.com/wp-content/uploads/2020/06/AN-EYELID-FOR-BEAUTY-cover.jpg" 
     },
   ],

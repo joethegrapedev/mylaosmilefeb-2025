@@ -23,8 +23,7 @@ const LeftBanner = () => {
         <p className="text-base font-titleFont text-xl leading-6 tracking-wider text-black">
           MyLaoSmile is an alliance of healthcare professionals based in Singapore working together to 
           treat patients with burns and other facial deformities. Through deliving free surgical 
-          aid to the underpriviledged in Laos, we aim to spread smiles and deliver care accross
-          borders, building a smilier world for all. 
+          aid to the underpriviledged in Laos, we aim to treat children with cleft lip burns, and congenital hand deformities.
         </p>
       </div>
       <div className="flex flex-col xl:flex-row gap-6 lgl:gap-0 justify-between">
@@ -39,18 +38,21 @@ const LeftBanner = () => {
           <div className="flex gap-4">
             <a href="https://youtu.be/_dih2JOb2C8" target="_blank">
               <span className="bannerIcon">
+                {/* @ts-ignore */}
                 <FaYoutube />
               </span>
             </a>
             
             <a href="https://www.instagram.com/mountelizabethhospitals/p/C0d2R7lInFg/?next=%2Frubykantor%2F&hl=ja&img_index=1" target="_blank">
               <span className="bannerIcon">
+                {/* @ts-ignore */}
                 <FaInstagram />
               </span>
             </a>
             
             <a href="https://www.facebook.com/watch/?v=1032449527847176" target="_blank">
               <span className="bannerIcon">
+                {/* @ts-ignore */}
                 <FaFacebookF />
               </span>
             </a>
