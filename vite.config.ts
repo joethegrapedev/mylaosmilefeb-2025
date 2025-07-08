@@ -5,6 +5,11 @@ export default defineConfig({
   plugins: [react()],
   assetsInclude: ['**/*.JPG', '**/*.jpeg', '**/*.png', '**/*.svg'],
   build: {
-    outDir: 'build', // Ensure the output directory matches your deployment settings
+    outDir: 'build',
+    target: 'esnext',
+    minify: 'esbuild',
+  },
+  esbuild: {
+    target: 'esnext',
   },
 });
