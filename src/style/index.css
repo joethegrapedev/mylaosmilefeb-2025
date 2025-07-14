@@ -40,3 +40,35 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Smooth scrolling for timeline */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  scroll-behavior: smooth;
+}
+
+/* Timeline specific styles */
+.timeline-container {
+  scroll-snap-type: x mandatory;
+}
+
+.timeline-item {
+  scroll-snap-align: center;
+}
+
+/* Smooth scrolling for timeline */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  scroll-behavior: smooth;
+}
+
+/* Timeline specific styles */
+.timeline-container {
+  scroll-snap-type: x mandatory;
+}
+
+.timeline-item {
+  scroll-snap-align: center;
+}
