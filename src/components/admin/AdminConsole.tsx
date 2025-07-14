@@ -110,7 +110,7 @@ const AdminConsole: React.FC = () => {
                   Welcome to the admin console. Here you can manage your website content and settings.
                 </p>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="bg-gray-800 p-6 rounded-lg">
                     <h3 className="text-lg font-medium text-white mb-2">Statistics</h3>
                     <p className="text-gray-400 text-sm mb-4">Manage website statistics and numbers</p>
@@ -131,11 +131,6 @@ const AdminConsole: React.FC = () => {
                     >
                       Edit Missions →
                     </button>
-                  </div>
-                  
-                  <div className="bg-gray-800 p-6 rounded-lg">
-                    <h3 className="text-lg font-medium text-white mb-2">Analytics</h3>
-                    <p className="text-gray-400 text-sm">View website analytics and reports</p>
                   </div>
                 </div>
               </div>
