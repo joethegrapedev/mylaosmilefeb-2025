@@ -176,7 +176,7 @@ In partnership with Lao Friends Hospital for Children, the surgical team has fos
         <h2 className="text-3xl font-bold text-center mb-12">Our Team</h2>
         {Object.keys(teamMembers).map((category) => (
           <div key={category} className="mb-8">
-            <h3 className="text-2xl font-semibold mb-4 capitalize">{category.replace(/([A-Z])/g, ' $1')}</h3>
+            <h3 className="text-2xl font-semibold mb-4 capitalize text-center">{category.replace(/([A-Z])/g, ' $1')}</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
               {teamMembers[category].map((member, index) => (
                 <div key={index} className="text-center">
