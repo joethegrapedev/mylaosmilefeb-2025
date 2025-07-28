@@ -202,7 +202,6 @@ In partnership with Lao Friends Hospital for Children, the surgical team has fos
         ))}
       </div>
       <div className="container mx-auto p-4 text-center">
-      <h2 className="text-2xl font-bold mb-6">Our Team</h2>
       <div className="flex flex-col items-center space-y-8">
         {Object.entries(teamppl).map(([role, members]) => (
           <div key={role} className="w-full max-w-md">
