@@ -4,12 +4,12 @@ import { HiArrowRight, HiArrowLeft } from "react-icons/hi";
 import Title from "./Title";
 import { quote} from "../assets";
 import { FadeIn } from "./FadeIn";
+import Pic1 from "../assets/images/Pictures from past missions/Pic1.jpg";
 import Pic2 from "../assets/images/Pictures from past missions/Pic2.jpg";
 import Pic3 from "../assets/images/Pictures from past missions/Pic3.jpg";
-import Pic1 from "../assets/images/Pictures from past missions/Pic1.jpg";
 import Pic4 from "../assets/images/Pictures from past missions/Pic4.jpg";
-import Pic5 from "../assets/images//Pictures from past missions/Pic5.jpg"
-import Pic6 from "../assets/images/Pictures from past missions/Pic6.jpg"
+import Pic5 from "../assets/images/Pictures from past missions/Pic5.jpg";
+import Pic6 from "../assets/images/Pictures from past missions/Pic6.jpg";
 
 function SampleNextArrow(props: any) {
   const { onClick } = props;
