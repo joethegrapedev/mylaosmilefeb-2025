@@ -25,7 +25,7 @@ const Navbar = () => {
                 to={link}
                 spy={true}
                 smooth={true}
-                offset={-70}
+                offset={-160}
                 duration={500}
               >
                 {title}
@@ -61,7 +61,7 @@ const Navbar = () => {
                       to={item.link}
                       spy={true}
                       smooth={true}
-                      offset={-70}
+                      offset={-160}
                       duration={500}
                     >
                       {item.title}

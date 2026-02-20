@@ -85,8 +85,8 @@ const Missions = () => {
 
   if (loading) {
     return (
-      <section 
-        id="missions"
+      <section
+        id="projects"
         className="w-full py-20 border-b-[1px] border-b-gray-700"
       >
         <FadeIn>
@@ -108,8 +108,8 @@ const Missions = () => {
   }
 
   return (
-    <section 
-      id="missions"
+    <section
+      id="projects"
       className="w-full py-20 border-b-[1px] border-b-gray-700"
     >
       <FadeIn>
