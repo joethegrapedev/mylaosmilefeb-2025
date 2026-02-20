@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "https://joethegrapedev.github.io/Laosmilewebsite1",
   "engines": {
-    "node": ">=20.19.0"
+    "node": "22.x"
   },
   "scripts": {
     "dev": "vite",
