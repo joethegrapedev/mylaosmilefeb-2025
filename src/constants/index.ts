@@ -21,6 +21,11 @@ export const navLinksdata = [
   },
   {
     _id: 1005,
+    title: "Join us",
+    link: "joinus",
+  },
+  {
+    _id: 1006,
     title: "Photo gallery",
     link: "testimonial",
   },

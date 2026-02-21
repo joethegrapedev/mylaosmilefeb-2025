@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Projects from "./components/Missions";
 import Resume from "./components/Resume";
 import Testimonial from "./components/Testimonial";
+import JoinUs from "./components/JoinUs";
 import AdminSignIn from "./components/admin/AdminSignIn";
 import AdminConsole from "./components/admin/AdminConsole";
 import ProtectedRoute from "./components/admin/ProtectedRoute";
@@ -23,6 +24,7 @@ const MainSite = () => {
           <Feature />
           <Projects />
           <Resume />
+          <JoinUs />
           <Testimonial />
           {/* <Contact /> */}
           {/* <Footer /> */}
