@@ -7,51 +7,7 @@ import Achievement from './Achievement';
 import { Tab } from '@headlessui/react';
 import { FadeIn } from './FadeIn';
 import Pic1 from "../assets/images/Cordelia.jpeg"
-
-const teamppl = {
-  Surgeons: [
-    "Kuek Bak Kim Leslie",
-    "Por Yong Chen",
-    "Wu Tze Liang Woffles",
-    "Michael Hsieh Ku-Hung",
-    "Robert Yap Tze Jin",
-    "Lim Jue Shuang Gale",
-    "Savitha Ramachandran",
-    "Cai Zhengyang Elijah",
-    "Ang Shu Yan Divya",
-    "Lai Yu Ming",
-    "Loh Mei Ling"
-  ],
-  Anaesthetists: [
-    "Lim Hsien Jer",
-    "Tan Swee Kim Josephine",
-    "Tan Geok Mui",
-    "Davies Lucy Jennifer",
-    "Rachael Peirera",
-    "Claire Ang Sze Teng",
-    "Neo Hong Jye",
-    "Ng Bang Teen",
-    "Philip Tseng Seng Sou",
-    "Stephanie Glarbo Jia Xing",
-    "Angela Tan Yun June",
-    "Yap Si Hui",
-    "Chia Xian Qing Pamela",
-    "Ma Wai Wai Zaw",
-    "Jonathan See"
-  ],
-  Orthodontist: [
-    "Catherine Lee Tong How"
-  ],
-  Nurses: [
-    "Ong ShiHui", "Lew Lian Choo", "Cassandra Leong", "Ho Liping  Michelle",
-    "Chua Sin Yee", "Cordelia Xavier", "Ng Sau Foong", "Yvonne Yap Yan Yan",
-    "Manoranjitham Harikrishnan", "Sheena Wong Xiu Wen", "Nur Diyana Binte Jamial",
-    "Tan Hwee Min"
-  ],
-  "Speech Therapist": ["Jasmin Teo Lee Ping"],
-  "Photographer / Web designer": ["John Tow"],
-  "Local Nurses and Doctors": ["Thank you for all who have supported our mission."],
-}
+import { contributorGroups, localAcknowledgement } from '../data/contributors';
 
 const teamMembers = {
   leaders: [
@@ -201,22 +157,42 @@ In partnership with Lao Friends Hospital for Children, the surgical team has fos
           </div>
         ))}
       </div>
-      <div className="container mx-auto p-4 text-center">
-      <div className="flex flex-col items-center space-y-8">
-        {Object.entries(teamppl).map(([role, members]) => (
-          <div key={role} className="w-full max-w-md">
-            <h3 className="text-xl font-semibold text-blue-600 mb-3">{role}</h3>
-            <ul className="space-y-1">
-              {members.map((member, index) => (
-                <li key={index} className="text-gray-700">
-                  {member}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+      <div className="container mx-auto px-4 pb-12">
+        <h2 className="text-3xl font-bold text-center mb-4">Our Contributors</h2>
+        <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+          This mission was made possible by the generosity and dedication of the
+          medical volunteers below.
+        </p>
+
+        <div className="max-w-4xl mx-auto space-y-10">
+          {contributorGroups.map(({ role, names }) => (
+            <div key={role}>
+              <div className="flex items-center gap-4 mb-4">
+                <h3 className="text-lg font-semibold uppercase tracking-wide text-gray-800 whitespace-nowrap">
+                  {role}
+                </h3>
+                <span className="flex-1 h-px bg-gray-200" aria-hidden="true" />
+                <span className="text-sm text-gray-400" aria-hidden="true">
+                  {names.length}
+                </span>
+              </div>
+              <ul className="columns-1 sm:columns-2 lg:columns-3 gap-x-8">
+                {names.map((name) => (
+                  <li
+                    key={name}
+                    className="text-gray-700 py-1 break-inside-avoid">
+                    {name}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <p className="text-center text-gray-600 italic max-w-2xl mx-auto mt-12">
+          {localAcknowledgement.message}
+        </p>
       </div>
-    </div>
         
       
       </FadeIn>
